@@ -130,7 +130,7 @@ class Harris_Corner_Detector:
 
         return norm_R
 
-    def disp_corners(self, img, rad=3, col=(255,0,0), thk=1):
+    def disp_corners(self, img, rad=3, col=(0,0,255), thk=1):
         """ Computes corners and plots vizible circles around them, overlaid on the original image.
         Args:
             img: (np array) input image, Shape: [3, Rows, Cols]
@@ -150,8 +150,5 @@ class Harris_Corner_Detector:
         coords = zip(cols, rows)
         for c in coords:
             img = cv2.circle(img, c, radius=rad, color=col, thickness=thk, lineType=8, shift=0)
-
-        plt.imshow(img.astype(int)); plt.show()
-
 
         return img
